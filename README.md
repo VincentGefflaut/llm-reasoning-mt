@@ -7,8 +7,6 @@ Official implementation of [LLM Reasoning for Machine Translation: Synthetic Dat
 
 # Table of Contents
 
-- [Official Repo of "LLM Resoning for MT"](#official-repo-of-llm-resoning-for-mt)
-- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Installation](#installation)
 - [Experiments](#experiments)
@@ -166,7 +164,7 @@ For **CoTFT with MAPS** for instance, you can use [almanach/topxgen-llama-4-scou
 
 ### GRPO
 
-For **GRPO**, the setup is almost the same as **SFT**'s and you only need a dataset with a `sentence` column and its `translation` column. These are enough to compute the reward functions we consider for the training. The training file is the same, GRPO just requires more arguments and more importantly you should add `--use_grpo` to your command.  We recommend using PEFT (`--use_peft`), which was recently shown to perform similarly to full fine-tuning for RL fine-tuning. Here is an example:
+For **GRPO**, the setup is almost the same as **SFT**'s and you only need a dataset with a `sentence` column and its `translation` column (e.g. [almanach/Xhosa](https://huggingface.co/datasets/almanach/Xhosa)). These are enough to compute the reward functions we consider for the training. The training file is the same, GRPO just requires more arguments and more importantly you should add `--use_grpo` to your command.  We recommend using PEFT (`--use_peft`), which was recently shown to perform similarly to full fine-tuning for RL fine-tuning. Here is an example:
 
 ```bash
 GPUS_PER_NODE=4
