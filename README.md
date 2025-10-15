@@ -1,6 +1,6 @@
 # Official Repo of "LLM Resoning for MT"
 
-Official implementation of [LLM Reasoning for Machine Translation: Synthetic Data Generation over Thinking Tokens]() with code, prompts and model outputs. We also release all the datasets we have used, here are the main collections:
+Official implementation of [LLM Reasoning for Machine Translation: Synthetic Data Generation over Thinking Tokens](https://arxiv.org/abs/2510.11919) with code, prompts and model outputs. We also release all the datasets we have used, here are the main collections:
 - [ToPXGen Llama-4-Scout-17B-16E-Instruct](https://huggingface.co/collections/almanach/topxgen-llama-xhosa-thinking-68e783ad2a516eddcc1cffe3)
 - [WMT19 Gemma-3-27b-it](https://huggingface.co/collections/almanach/wmt19-lithuanian-thinking-68e7789566a0f90d4e3c4f51)
 
@@ -282,4 +282,13 @@ This work was made possible by the INRIA Paris' NLP research team, [ALMAnaCH](ht
 Please cite the following if you use the data or code in this repository.
 
 ```
+@misc{zebaze2025llmreasoningmachinetranslation,
+      title={LLM Reasoning for Machine Translation: Synthetic Data Generation over Thinking Tokens}, 
+      author={Armel Zebaze and Rachel Bawden and Benoît Sagot},
+      year={2025},
+      eprint={2510.11919},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.11919}, 
+}
 ```
