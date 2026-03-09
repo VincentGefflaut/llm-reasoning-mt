@@ -450,7 +450,17 @@ def main(args):
             dataloader_pin_memory=False,
             report_to="none"
         )
-        trainer = transformers.Trainer(model=model, args=training_args,)
+        # Add data collator for proper padding
+        data_collator = transformers.DataCollatorWithPadding(
+            tokenizer=tokenizer,
+            padding=True,
+            max_length=args.max_input_length,
+        )
+        trainer = transformers.Trainer(
+            model=model,
+            args=training_args,
+            data_collator=data_collator,
+        )
 
         # Datasets utilities
         def _make_input(example):
