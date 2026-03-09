@@ -269,6 +269,16 @@ If the model was trained with LoRA, the following arguments should be added (the
 
 You can evaluate your model with a command similar to [scripts/eval.sh](scripts/eval.sh)
 
+### MetricX setup (for `comptra/evaluate/test.py`)
+
+`comptra/evaluate/test.py` imports `metricx23`, which is not distributed on PyPI. To make evaluation work on a fresh clone, run:
+
+```bash
+bash scripts/setup_metricx.sh
+```
+
+The evaluator now auto-detects MetricX if it is cloned to either `metricx/` or `third_party/metricx/` at repository root.
+
 # Contributions
 
 It is easy to add a new prompting strategy for MT or decomposition prompt by following what is done in [paraphrase.py](paraphrase.py).
