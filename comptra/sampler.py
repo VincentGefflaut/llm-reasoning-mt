@@ -1947,6 +1947,8 @@ class vLLMSampler(Sampler):
                 # disable_custom_all_reduce=True
             )
         else:
+            bf_supported = torch.cuda.get_device_capability()[0] >= 8
+            print(f"GPU does{' ' if bf_supported else ' not '}support bfloat16.")
             self.llm = LLM(
                 model=self.model_name_or_path,
                 tokenizer=self.tokenizer_name_or_path,
@@ -1958,6 +1960,7 @@ class vLLMSampler(Sampler):
                             for col in ["gemma-2-", "gemma-"]
                         ]
                     )
+                    and bf_supported
                     else (
                         "auto"
                         if any([col in self.model_name_or_path for col in ["Llama-4"]])
